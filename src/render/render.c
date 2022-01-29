@@ -46,7 +46,6 @@ static void* _glutLoopThread(void* param)
   glutMainLoop();
 }
 
-
 int init(int argc, char* argv[],  const char* name ,const int width, const int height)
 {
   // framebuffer initialization
