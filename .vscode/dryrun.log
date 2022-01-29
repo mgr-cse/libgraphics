@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/carboncutter/Desktop/IITKGP/graphics/render'
+ 
+cc -g -c -o build/asgn1.o src/asgn1.c
+cc -g -o build/a.out build/asgn1.o -lGL -lGLU -lglut -lm
+make: Leaving directory '/home/carboncutter/Desktop/IITKGP/graphics/render'
+ 
