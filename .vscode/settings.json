@@ -1,3 +1,10 @@
 {
-    "makefile.extensionOutputFolder": "./.vscode"
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/carboncutter/Desktop/IITKGP/graphics/render/build",
+            "binaryPath": "/home/carboncutter/Desktop/IITKGP/graphics/render/build/a.out",
+            "binaryArgs": []
+        }
+    ]
 }
