@@ -13,10 +13,7 @@ $(shell [ ! -d ./build ] && mkdir -p $(DIRS))
 build/a.out: $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
 
-build/%.o: %.c %.h
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-build/%.o: %.c
+build/%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:

@@ -1,6 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/carboncutter/Desktop/IITKGP/graphics/render'
  
-cc -g -o build/a.out build/./src/render/render.o build/./src/main.o -lGL -lGLU -lglut -lm -lpthread
+make: 'build/a.out' is up to date.
 make: Leaving directory '/home/carboncutter/Desktop/IITKGP/graphics/render'
  

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jan 30 02:01:18 2022
+# Make data base, printed on Sun Jan 30 02:36:51 2022
 
 # Variables
 
@@ -231,7 +231,8 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome-xorg
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=18/154=12%
+ 
+# Load=109/1024=11%, Rehash=0, Collisions=19/155=12%
 
 # Pattern-specific Variable Values
 
@@ -245,22 +246,17 @@ GDMSESSION = gnome-xorg
 
 # Implicit Rules
 
-build/%.o: %.c %.h
+build/%.o: %.c src/render/render.h
 #  recipe to execute (from 'Makefile', line 17):
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-build/%.o: %.c
-#  recipe to execute (from 'Makefile', line 20):
- 
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-# 2 implicit rules, 0 (0.0%) terminal.
+# 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-30 02:01:16.232934778
+#  Last modified 2022-01-30 02:36:25.255779699
 #  File has been updated.
 #  Successfully updated.
 
@@ -268,7 +264,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 23):
+#  recipe to execute (from 'Makefile', line 20):
 	rm -rf build
 
 build/a.out: build/./src/render/render.o build/./src/main.o
@@ -311,12 +307,13 @@ build/./src/main.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 186 B / avg = 9 B
-# current buf: size = 8162 B / used = 186 B / count = 20 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 202 B / avg = 10 B
+# current buf: size = 8162 B / used = 202 B / count = 20 / avg = 10 B
 
-# strcache performance: lookups = 28 / hit rate = 28%
+# strcache performance: lookups = 26 / hit rate = 23%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Sun Jan 30 02:01:18 2022
+ 
+# Load=20/8192=0%, Rehash=0, Collisions=0/26=0%
+# Finished Make data base on Sun Jan 30 02:36:51 2022
 
  
