@@ -1,24 +1,25 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat Jan 29 23:37:56 2022
+# Make data base, printed on Sun Jan 30 02:01:18 2022
 
 # Variables
 
 # makefile (from 'Makefile', line 3)
-OBJ := ./build/asgn1.o
+OBJ := ./build/./src/render/render.o ./build/./src/main.o
 # environment
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 1)
-SRC := ./src/asgn1.c
+SRC := ./src/render/render.c ./src/main.c
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5cc4fb8a-ba54-4bca-87bd-3185eafe8c08.sock
 # environment
@@ -75,6 +76,8 @@ VSCODE_PIPE_LOGGING = true
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 4)
+DIRS := ./build/./src/render/ ./build/./src/
 # environment
 MFLAGS = -pqrR
 # environment
@@ -111,7 +114,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 <D = $(patsubst %/,%,$(dir $<))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from 'Makefile', line 7)
+# makefile (from 'Makefile', line 8)
 INCLUDE = -I./src
 # environment
 BREAKPAD_DUMP_LOCATION = /home/carboncutter/.config/Code/exthost Crash Reports
@@ -130,7 +133,7 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # makefile (from 'Makefile', line 2)
-HEADERS := 
+HEADERS := ./src/render/render.h
 # environment
 SHLVL = 1
 # environment
@@ -147,8 +150,8 @@ MAKEFILES :=
 LANGUAGE = en_IN:en
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'Makefile', line 8)
-LDLIBS = -lGL -lGLU -lglut -lm
+# makefile (from 'Makefile', line 9)
+LDLIBS = -lGL -lGLU -lglut -lm -lpthread
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -170,7 +173,7 @@ GNUMAKEFLAGS :=
 # environment
 LOGNAME = carboncutter
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := build/a.out
 # environment
 SYSTEMD_EXEC_PID = 1348
 # environment
@@ -183,15 +186,13 @@ GTK_MODULES = gail:atk-bridge
 MAKE_VERSION := 4.3
 # 'override' directive
 .SHELLSTATUS := 1
-# makefile (from 'Makefile', line 4)
-TARGETS := ./build/a.out
 # environment
 SSH_AGENT_PID = 1523
 # environment
 _ = /usr/bin/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'Makefile', line 6)
+# makefile (from 'Makefile', line 7)
 CFLAGS = -g
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
@@ -230,7 +231,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome-xorg
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=17/162=10%
+# Load=109/1024=11%, Rehash=0, Collisions=18/154=12%
 
 # Pattern-specific Variable Values
 
@@ -244,14 +245,22 @@ GDMSESSION = gnome-xorg
 
 # Implicit Rules
 
-# No implicit rules.
+build/%.o: %.c %.h
+#  recipe to execute (from 'Makefile', line 17):
+	$(CC) $(CFLAGS) -c -o $@ $<
 
+build/%.o: %.c
+#  recipe to execute (from 'Makefile', line 20):
+ 
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# 2 implicit rules, 0 (0.0%) terminal.
 # Files
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-29 23:35:41.724364845
+#  Last modified 2022-01-30 02:01:16.232934778
 #  File has been updated.
 #  Successfully updated.
 
@@ -259,19 +268,15 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
+#  recipe to execute (from 'Makefile', line 23):
 	rm -rf build
 
-build/a.out: build/asgn1.o
+build/a.out: build/./src/render/render.o build/./src/main.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from 'Makefile', line 15):
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
 	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
- 
 
 # Not a target:
 .DEFAULT:
@@ -279,69 +284,39 @@ build/a.out: build/asgn1.o
 #  Modification time never checked.
 #  File has not been updated.
 
-all: build/a.out
+# Not a target:
+all:
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  File has not been updated.
 
 # Not a target:
-src/asgn1.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-01-29 17:48:17.091546019
-#  File has been updated.
-#  Successfully updated.
-
-build/asgn1.o: src/asgn1.c
+build/./src/render/render.o:
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := build/asgn1.o
-# automatic
-# * := 
-# automatic
-# < := src/asgn1.c
-# automatic
-# + := src/asgn1.c
-# automatic
-# % := 
-# automatic
-# ^ := src/asgn1.c
-# automatic
-# ? := src/asgn1.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
-#  recipe to execute (from 'Makefile', line 18):
-	$(CC) $(CFLAGS) -c -o $@ $<
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-.SUFFIXES:
+build/./src/main.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/20=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 147 B / avg = 8 B
-# current buf: size = 8162 B / used = 147 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 186 B / avg = 9 B
+# current buf: size = 8162 B / used = 186 B / count = 20 / avg = 9 B
 
-# strcache performance: lookups = 29 / hit rate = 41%
+# strcache performance: lookups = 28 / hit rate = 28%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Sat Jan 29 23:37:56 2022
+# Load=20/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Sun Jan 30 02:01:18 2022
 
  
