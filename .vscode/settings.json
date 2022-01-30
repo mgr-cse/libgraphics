@@ -6,5 +6,8 @@
             "binaryPath": "/home/carboncutter/Desktop/IITKGP/graphics/render/build/a.out",
             "binaryArgs": []
         }
-    ]
+    ],
+    "files.associations": {
+        "graphics.h": "c"
+    }
 }

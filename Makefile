@@ -10,7 +10,7 @@ DIRS+=$(addprefix ./build/, $(dir $(SRC_GRAPHLIB)))
 $(shell [ ! -d ./build ] && mkdir -p $(DIRS))
 
 CFLAGS=-g
-INCLUDE=-I./src
+INCLUDE=-I./src -I./src/graphics
 LDLIBS=-lGL -lGLU -lglut -lm -lpthread
 LDFLAGS=-L./build/
 
@@ -26,4 +26,4 @@ build/%.o: %.c $(HEADERS)
 clean:
 	rm -rf build
 
-
+.PHONY: clean

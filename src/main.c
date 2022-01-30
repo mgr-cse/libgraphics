@@ -1,18 +1,21 @@
 #include "graphics/graphics.h"
-
-struct point{
-  char g;
-};
-
-struct point p;
+#include <unistd.h>
 
 int main(int argc, char* argv[])
 {
-  init(argc, argv, "hello!", 1280, 720);
-  ClearBuffer(255,255,255);
-  PlotToroid(360, 200, 140, 12, 1280/2, 720/2, 0,0,0);
-  PlotLine(0,0,1279,719, 0,0,0);
-  PlotLine(1279, 719, 600, 600, 0, 0, 0);
-  PlotLine(600, 600, 0, 0, 0,0,0);
+  int w = 1280, h = 720;
+  init(argc, argv, "hello!", w, h, 10.0);
+
+  SetColor(255,255,255);
+    ClearBuffer();
+  
+  SetColor(0, 0, 0);
+    PlotToroid(360, 200, 140, 12, w/2, h/2);
+    sleep(2);
+    PlotLine(0, 0, w-1, h-1);
+    sleep(2);
+    PlotLine(w-1, h-1, 600, 600);
+    sleep(2);
+    PlotLine(600, 600, 0, 0);
   end();
 }
