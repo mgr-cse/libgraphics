@@ -4,7 +4,7 @@
 // data structures
 typedef struct __Color__
 {
-    unsigned char red, green, blue;
+	unsigned char red, green, blue;
 }Color;
 
 // primitive library functions
