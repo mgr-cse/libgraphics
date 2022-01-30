@@ -8,6 +8,12 @@
 #include <math.h>
 #include <pthread.h>
 
+struct point{
+  int i;
+};
+
+static struct point p;
+
 // constants for some "magic numbers"
 static unsigned int fbWidth;
 static unsigned int fbHeight;
@@ -18,8 +24,8 @@ static unsigned long long fbSize;
 static unsigned char* framebuffer;
 static const char* fbName;
 
+// main loop thread
 static pthread_t loop_id;
-
 static int argCnt;
 static char** argList;
 

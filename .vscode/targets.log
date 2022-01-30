@@ -8,20 +8,20 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jan 30 02:36:51 2022
+# Make data base, printed on Sun Jan 30 15:50:44 2022
 
 # Variables
 
 # makefile (from 'Makefile', line 3)
-OBJ := ./build/./src/render/render.o ./build/./src/main.o
+OBJ := ./build/./src/main.o
 # environment
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 1)
-SRC := ./src/render/render.c ./src/main.c
+SRC := ./src/main.c
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5cc4fb8a-ba54-4bca-87bd-3185eafe8c08.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a2c909b7-0aab-456e-b6f0-34c64c59bcbe.sock
 # environment
 VSCODE_CWD = /home/carboncutter/Desktop/IITKGP/graphics/render
 # environment
@@ -45,7 +45,7 @@ PWD = /home/carboncutter/Desktop/IITKGP/graphics/render
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/home/carboncutter/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
 # environment
-OLDPWD = /home/carboncutter/Desktop/IITKGP/graphics
+OLDPWD = /home/carboncutter/Desktop/IITKGP
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -56,6 +56,8 @@ VSCODE_LOG_STACK = false
 WINEARCH = win32
 # environment
 VSCODE_CODE_CACHE_PATH = /home/carboncutter/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+# makefile (from 'Makefile', line 5)
+SRC_GRAPHLIB := ./src/graphics/graphics.c
 # environment
 LANG = C
 # environment
@@ -65,7 +67,7 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.75
+GNOME_TERMINAL_SERVICE = :1.86
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -76,8 +78,8 @@ VSCODE_PIPE_LOGGING = true
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# makefile (from 'Makefile', line 4)
-DIRS := ./build/./src/render/ ./build/./src/
+# makefile (from 'Makefile', line 9)
+DIRS := ./build/./src/ ./build/./src/graphics/
 # environment
 MFLAGS = -pqrR
 # environment
@@ -97,13 +99,13 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2179
+VSCODE_PID = 3028
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/carbo-dell:@/tmp/.ICE-unix/1462,unix/carbo-dell:/tmp/.ICE-unix/1462
+SESSION_MANAGER = local/carbo-dell:@/tmp/.ICE-unix/1479,unix/carbo-dell:/tmp/.ICE-unix/1479
 # automatic
 *F = $(notdir $*)
 # environment
@@ -114,7 +116,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 <D = $(patsubst %/,%,$(dir $<))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 13)
 INCLUDE = -I./src
 # environment
 BREAKPAD_DUMP_LOCATION = /home/carboncutter/.config/Code/exthost Crash Reports
@@ -133,11 +135,11 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # makefile (from 'Makefile', line 2)
-HEADERS := ./src/render/render.h
+HEADERS := ./src/graphics/graphics.h
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/855ecb94_4696_44ec_a990_c5405af024e6
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d4a70b55_1767_4a5e_bb4c_86d73090ea30
 # environment
 MAKELEVEL := 0
 # default
@@ -150,7 +152,7 @@ MAKEFILES :=
 LANGUAGE = en_IN:en
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'Makefile', line 9)
+# makefile (from 'Makefile', line 14)
 LDLIBS = -lGL -lGLU -lglut -lm -lpthread
 # environment
 VSCODE_LOG_NATIVE = false
@@ -161,6 +163,7 @@ USERNAME = carboncutter
 # environment
 XDG_CURRENT_DESKTOP = GNOME
 # environment
+ 
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
 +F = $(notdir $+)
@@ -175,7 +178,9 @@ LOGNAME = carboncutter
 # makefile
 .DEFAULT_GOAL := build/a.out
 # environment
-SYSTEMD_EXEC_PID = 1348
+SYSTEMD_EXEC_PID = 1365
+# makefile (from 'Makefile', line 6)
+OBJ_GRAPHLIB := ./build/./src/graphics/graphics.o
 # environment
 DISPLAY = :1
 # environment
@@ -186,13 +191,15 @@ GTK_MODULES = gail:atk-bridge
 MAKE_VERSION := 4.3
 # 'override' directive
 .SHELLSTATUS := 1
+# makefile (from 'Makefile', line 15)
+LDFLAGS = -L./build/
 # environment
-SSH_AGENT_PID = 1523
+SSH_AGENT_PID = 1540
 # environment
 _ = /usr/bin/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'Makefile', line 7)
+# makefile (from 'Makefile', line 12)
 CFLAGS = -g
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
@@ -231,8 +238,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome-xorg
 # variable set hash-table stats:
- 
-# Load=109/1024=11%, Rehash=0, Collisions=19/155=12%
+# Load=112/1024=11%, Rehash=0, Collisions=21/167=13%
 
 # Pattern-specific Variable Values
 
@@ -246,8 +252,8 @@ GDMSESSION = gnome-xorg
 
 # Implicit Rules
 
-build/%.o: %.c src/render/render.h
-#  recipe to execute (from 'Makefile', line 17):
+build/%.o: %.c src/graphics/graphics.h
+#  recipe to execute (from 'Makefile', line 24):
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 # 1 implicit rules, 0 (0.0%) terminal.
@@ -256,23 +262,30 @@ build/%.o: %.c src/render/render.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-30 02:36:25.255779699
+#  Last modified 2022-01-30 15:47:48.975075357
 #  File has been updated.
 #  Successfully updated.
+
+build/libgraphics.a: build/./src/graphics/graphics.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	ar rcs $@ $^
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
+#  recipe to execute (from 'Makefile', line 27):
 	rm -rf build
 
-build/a.out: build/./src/render/render.o build/./src/main.o
+build/a.out: build/./src/main.o build/libgraphics.a
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
-	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 # Not a target:
 .DEFAULT:
@@ -288,7 +301,7 @@ all:
 #  File has not been updated.
 
 # Not a target:
-build/./src/render/render.o:
+build/./src/graphics/graphics.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -300,20 +313,20 @@ build/./src/main.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/20=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/23=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 202 B / avg = 10 B
-# current buf: size = 8162 B / used = 202 B / count = 20 / avg = 10 B
-
-# strcache performance: lookups = 26 / hit rate = 23%
-# hash-table stats:
  
-# Load=20/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Sun Jan 30 02:36:51 2022
+# strcache buffers: 1 (0) / strings = 21 / storage = 230 B / avg = 10 B
+# current buf: size = 8162 B / used = 230 B / count = 21 / avg = 10 B
+
+# strcache performance: lookups = 29 / hit rate = 27%
+# hash-table stats:
+# Load=21/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Sun Jan 30 15:50:44 2022
 
  

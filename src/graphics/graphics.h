@@ -1,5 +1,5 @@
-#ifndef _RENDER_H_
-#define _RENDER_H_
+#ifndef _GRAPHICS_H_
+#define _GRAPHICS_H_
 
 int init(int argc, char* argv[],  const char* name ,const int width, const int height);
 int end(void);
