@@ -1,5 +1,5 @@
-#include "graphics/graphics.h"
 #include <unistd.h>
+#include "graphics/graphics.h"
 
 int main(int argc, char* argv[])
 {
@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
   
   SetColor(0, 0, 0);
     PlotToroid(360, 200, 140, 12, w/2, h/2);
+    PlotCircle(200, w/2, h/2);
     sleep(2);
     PlotLine(0, 0, w-1, h-1);
     sleep(2);
