@@ -26,9 +26,12 @@ static char windowTitle[256];
 static unsigned char* framebuffer;
 
 // data for thread spawned by init()
-static pthread_t loop_id;
+static pthread_t updateThread;
+static int mainThread = 1;
 static int argCnt;
 static char** argList;
+extern int main(int argc, char* argv[]);
+static void* updateThreadFunc(void* param) { main(argCnt, argList); return NULL; }
 
 // drawing info
 static Color drawColor;
@@ -62,10 +65,9 @@ static void CalcFps(int val)
 }
 
 // glut initialization
-static void* _glutLoopThread(void* param)
+static void* InitGlut(void* param)
 {
   // glut initialization
-  glutInit(&argCnt,argList);
   glutInitWindowSize(fbWidth, fbHeight);
   glutInitWindowPosition(0,0);
   glutInitDisplayMode(GLUT_RGB);
@@ -79,32 +81,43 @@ static void* _glutLoopThread(void* param)
 
   // run glut window loop
   glutMainLoop();
+
+  // main thread ends here
 }
 
 // initalize library
 int init(int argc, char* argv[],  const char* name ,const int width, const int height, double framesPerSec)
 {
-  // framebuffer initialization
-  fbWidth = width;
-  fbHeight = height;
-  fbSize = (long long)width*height*colorChannels;
-  framebuffer = (unsigned char*)malloc(fbSize*sizeof(unsigned char)); 
-  argCnt = argc;
-  argList = argv;
-  fbName = name;
-  if(!(framesPerSec<=0)) frameTime = (1000/framesPerSec) + 0.5;
-  else frameTime = -1;
+  if(mainThread){
+    
+    mainThread = 0;
+    
+    // framebuffer initialization
+    fbWidth = width;
+    fbHeight = height;
+    fbSize = (long long)width*height*colorChannels;
+    framebuffer = (unsigned char*)malloc(fbSize*sizeof(unsigned char)); 
+    argCnt = argc;
+    argList = argv;
+    fbName = name;
+    if(!(framesPerSec<=0)) frameTime = (1000/framesPerSec) + 0.5;
+    else frameTime = -1;
 
-  // loop thread
-  pthread_create(&loop_id, NULL, _glutLoopThread, NULL);
-  return 0;
+    // initialize glu
+    glutInit(&argCnt,argList);
+    
+    // create update_Thread
+    pthread_create(&updateThread, NULL, updateThreadFunc, NULL);
+    sched_yield();
+
+    // initialize glut window
+    InitGlut(NULL);
+  }
 }
 
 int end(void)
 {
     glutPostRedisplay();
-    pthread_join(loop_id, NULL);
-    free(framebuffer);
 }
 
 // get draw info
