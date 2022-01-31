@@ -18,6 +18,7 @@ else
 endif
 
 CFLAGS=-g
+CPPFLAGS=
 INCLUDE=-I./src -I./src/graphics
 
 LDLIBS:=
@@ -27,6 +28,8 @@ ifeq ($(OSTYPE),Linux)
 endif
 ifeq ($(OSTYPE),Darwin)
 	LDLIBS+=-framework opengl -framework glut
+	CFLAGS+=-Wdeprecated-declarations
+	CPPFLAGS+= -DGL_SILENCE_DEPRECATION
 endif
 ifeq ($(OSTYPE),Win32)
 	CC:=gcc
@@ -43,7 +46,7 @@ build/libgraphics.a: $(OBJ_GRAPHLIB)
 	$(AR) rcs $@ $^
 
 build/%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDE) -c -o $@ $<
 
 clean:
 	rm -rf build

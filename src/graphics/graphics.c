@@ -83,6 +83,7 @@ static void* InitGlut(void* param)
 	glutMainLoop();
 
 	// main thread ends here
+	return NULL;
 }
 
 // initalize library
@@ -113,11 +114,13 @@ int init(int argc, char* argv[],  const char* name ,const int width, const int h
 		// initialize glut window
 		InitGlut(NULL);
 	}
+	return 0;
 }
 
 int end(void)
 {
 	glutPostRedisplay();
+	return 0;
 }
 
 // get draw info
