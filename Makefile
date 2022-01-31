@@ -10,9 +10,9 @@ DIRS+=$(addprefix ./build/, $(dir $(SRC_GRAPHLIB)))
 $(shell [ ! -d ./build ] && mkdir -p $(DIRS))
 
 # check OS
-OSTYPE:=
 ifeq ($(OS),Windows_NT)
 	OSTYPE+=Win32
+$(shell [ ! -f ./build/freeglut.dll ] && cp ./freeglut/bin/x64/freeglut.dll ./build/freeglut.dll)
 else 
 	OSTYPE+=$(shell uname -s)
 endif
@@ -29,20 +29,21 @@ ifeq ($(OSTYPE),Darwin)
 	LDLIBS+=-framework opengl -framework glut
 endif
 ifeq ($(OSTYPE),Win32)
-	INCLUDE+=
+	CC:=gcc
+	INCLUDE+=-I./freeglut/include
 	LDLIBS+=-lopengl32 -lfreeglut
-	LDFLAGS+=
+	LDFLAGS+=-L./freeglut/lib/x64
 endif
 LDLIBS+=-lm -lpthread
 
 build/a.out: $(OBJ) build/libgraphics.a
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+	$(CC) $(CFLAGS) $(INCLUDE) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 build/libgraphics.a: $(OBJ_GRAPHLIB)	
 	$(AR) rcs $@ $^
 
 build/%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
 clean:
 	rm -rf build
